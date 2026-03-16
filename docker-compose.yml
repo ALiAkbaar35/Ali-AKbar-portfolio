@@ -1,0 +1,15 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PORT: 4173
+        BASE_PATH: /
+    env_file:
+      - .env
+    environment:
+      PORT: 4173
+    ports:
+      - "4173:4173"
+    restart: unless-stopped
